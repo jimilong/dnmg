@@ -9,15 +9,6 @@ nginx:
     - ./conf/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     - ./log/nginx/:/var/log/nginx/:rw
 
-golang:
-  image: golang:alpine
-  expose:
-    - "9001"
-    - "9002"
-  volumes:
-    - ./www/:/var/www/html/:rw
-    - ./log/golang/:/var/log/golang/:rw
-
 mysql:
   image: mysql:latest
   ports:
